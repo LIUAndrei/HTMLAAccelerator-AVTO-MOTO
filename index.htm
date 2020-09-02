@@ -9,23 +9,16 @@
 <body>
 
     <header>
-        <div class="narrow-down-container clearfix">
-            <nav>
-                <!--
-                <div class="header__logo header-logo">
-                    <a href="#"><img src="img/logo.svg" alt="AVTO-MOTO" height="55px" width="55px"></a>
-                </div>
-                <div class="header__name header-name">
-                    <a href="#"><span class="header-name__avto">AVTO</span><br><span class="header-name__moto">MOTO</span></a>
-                </div>
-            -->
-                <ul class="header__navlist clearfix">
+        <div class="narrow-down-container header__flexbox"> <!-- класс narrow-down-container  служит только для того, чтобы отодвинуть содержимое от краев-->
+
+            <a href="#"><img class="header__logo" src="img/logo_extended.png" alt="AVTO-MOTO"></a>
+            <nav class="header__navigation">
+                <ul class="header__navlist">
                     <li><a href="#">Автомобили</a></li>
                     <li><a href="#">Контакты</a></li>
                     <li><a href="#">Услуги</a></li>
                     <li><a href="#">Вакансии</a></li>
                 </ul>
-
             </nav>
 
         </div>
@@ -33,10 +26,58 @@
 
 
     <main>
-        <div class="narrow-down-container">
-            <p class="regular">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi officia beatae ipsum libero ad commodi aliquid quae, esse eaque mollitia voluptatibus voluptatum modi eveniet debitis culpa aliquam. Quasi, similique harum.</p>
-            <p class="bold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi officia beatae ipsum libero ad commodi aliquid quae, esse eaque mollitia voluptatibus voluptatum modi eveniet debitis culpa aliquam. Quasi, similique harum.</p>
-            <p class="ff600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi officia beatae ipsum libero ad commodi aliquid quae, esse eaque mollitia voluptatibus voluptatum modi eveniet debitis culpa aliquam. Quasi, similique harum.</p>
+        <div class="narrow-down-container main__gridcontainer">
+
+            <!-- ниже размечен раздел с фотографией машины и слайдером для выбора одной из трех фотографий -->
+
+            <div class="main__top-left picture-slider">
+                <div class="picture-slider__picture">
+                    <img class="active" src="pictures/full-pic-1.png" alt="Фото автомобиля" width="600px" height="375px">
+                    <img class="inactive" src="pictures/full-pic-2.png" alt="Фото автомобиля" width="600px" height="375px">
+                    <img class="inactive" src="pictures/full-pic-3.png" alt="Фото автомобиля" width="600px" height="375px">
+                </div>
+                <div class="picture-slider__slider slider">
+
+                    <button class="slider__button">
+                    </button>
+
+                    <a href=""><img src="pictures/thumbnail-1.png" alt="Экстерьер" width="128px" height="80px"></a>
+                    <a href=""><img src="pictures/thumbnail-2.png" alt="Интерьер"  width="128px" height="80px"></a>
+                    <a href=""><img src="pictures/thumbnail-3.png" alt="Спидометр"  width="128px" height="80px"></a>
+
+                    <button class="slider__button">
+                    </button>
+                    
+                </div>
+            </div>
+
+            <!-- ниже размечен раздел с описанием автомобиля -->
+
+            <div class="main__top-right description"> 
+                <h2 class="description__name">Марпех 11</h2>
+                <div class="description__features features">
+                    <div class="features__gasoline">бензин</div>
+                    <div class="features__gearbox">механика</div>
+                    <div class="features__horsepower">100 л.с.</div>
+                    <div class="features__displacement">1.4 л</div>
+                </div>
+                <div class="description__price">2 300 000 ₽</div>
+
+
+                <button class="description__button-purchase">оставить заявку</button>
+                <button class="description__button-loan">В КРЕДИТ ОТ 11 000 ₽</button>
+            </div>
+
+            <!-- ниже размечен раздел с таблицами -->
+
+            <div class="main__bottom-right">
+                
+                
+                таблица
+            
+            
+            
+            </div>
 
         </div>
     </main>

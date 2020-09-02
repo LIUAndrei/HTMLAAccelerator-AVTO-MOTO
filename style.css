@@ -452,13 +452,10 @@
 
 body {
     width: 1920px;
-
 }
 
 ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
 a {
@@ -466,9 +463,9 @@ a {
 }
 
 .narrow-down-container { /* this container makes everything narrower */
-    width: 1167px;
+    width: 1180px;
     height: 100%;
-    outline: 1px solid coral;
+   /* outline: 1px solid coral; */
     margin: 0 auto;
 }
 
@@ -487,58 +484,34 @@ a {
 header {
     height: 84px;
     background: #F5F5F9;
+    outline: 1px solid coral;
 }
 
 header a {
     font-weight: 600;
     font-size: 16px;
     line-height: 22px;
+    
 }
 
 .header__logo {
     outline: 1px solid black;
-    position: absolute;
-    top: 15px;
 }
 
-.header-name__avto {
-    position: absolute;
-    height: 25px;
-    left: 451px;
-    right: 1410px;
-    top: 20px;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 25px;
-    /* identical to box height */
+.header__flexbox {
+    display: flex;
+    justify-content: space-between;
 
-    letter-spacing: 0.13em;
-}
-
-.header-name__moto {
-    position: absolute;
-    height: 20px;
-    left: 450px;
-    right: 1419px;
-    top: 45px;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 19px;
-    letter-spacing: 0.13em;
 }
 
 ul.header__navlist {
-    display: block;
-    height: 100%;
     outline: 1px solid blue;
-    float: right;
-    margin-top: 0;
-    margin-bottom: auto;
+    padding-top: 31px;
 }
 
 ul.header__navlist li {
+    display: inline-block;
     outline: 1px solid yellowgreen;
-    float: left;
     margin-left: 68px;
 }
 
@@ -547,9 +520,69 @@ ul.header__navlist li {
 
 /* <main> STYLES ARE BELOW */
 
+
+
+
 main {
     height: 1224px;
+    padding-top: 74px;
 }
+
+
+
+.main__gridcontainer {
+    display: grid;
+    grid-template-columns: 601px auto;
+    grid-template-rows: 530px auto;
+    gap: 50px;
+}
+
+.main__top-left {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    outline: 1px solid yellowgreen;
+    padding-top: 15px;
+}
+
+.main__top-right {
+    grid-row-start: 1;
+    grid-column-start: 2;
+    outline: 1px solid yellowgreen;
+}
+
+.main__bottom-right {
+    outline: 1px solid yellowgreen;
+}
+
+
+
+/* раздел с фотографией машины и слайдером для выбора одной из трех фотографий STYLES ARE BELOW  */
+
+.picture-slider__picture .inactive {
+    display: none;
+}
+
+.picture-slider__slider {
+    margin-top: 35px;
+    outline: 1px solid red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.picture-slider__slider .slider__button {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 1px solid #D7D9DF;
+    background-color: #ffffff;
+    
+}
+
+/* раздел с описанием автомобиля STYLES ARE BELOW */
+
+
 
 
 /* <footer> STYLES ARE BELOW */
