@@ -437,7 +437,7 @@
 @font-face {
     font-family: "Open Sans 600";
     src: url("fonts/OpenSans-SemiBold.ttf");
-    font-weight: normal;
+    font-weight: 600;
     font-style: normal;
 }
 
@@ -552,13 +552,14 @@ main {
 
 .main__bottom-right {
     outline: 1px solid yellowgreen;
+    grid-column: 1 / span 2;
 }
 
 
 
 /* раздел с фотографией машины и слайдером для выбора одной из трех фотографий STYLES ARE BELOW  */
 
-.picture-slider__picture .inactive {
+.picture-slider__picture .fullpic__inactive {
     display: none;
 }
 
@@ -580,7 +581,250 @@ main {
     
 }
 
+.slider__button-arrow-left {
+    border-bottom: 1px solid #48494D;
+    border-left: 1px solid #48494D;
+    transform: rotate(45deg);
+    display: block;
+    position: relative;
+    width: 10px;
+    height: 10px;
+    top: 0;
+    left: 16px;
+}
+
+.slider__button-arrow-left::after {
+    content: "";
+    width: 20px;
+    height: 1px;
+    position: absolute;
+    background: #48494D;
+    transform: rotate(-45deg) translateY(-4px) translateX(-7px);
+}
+
+.slider__button-arrow-right {
+    border-bottom: 1px solid #48494D;
+    border-left: 1px solid #48494D;
+    transform: rotate(225deg);
+    display: block;
+    position: relative;
+    width: 10px;
+    height: 10px;
+    top: 0;
+    left: 22px;
+}
+
+.slider__button-arrow-right::after {
+    content: "";
+    width: 20px;
+    height: 1px;
+    position: absolute;
+    background: #48494D;
+    transform: rotate(-45deg) translateY(-5px) translateX(-7px);
+}
+
+.slider__button-inactive {
+    border-color: #D7D9DF;
+}
+
+.slider__button-inactive::after {
+    background-color: #D7D9DF;
+}
+
+
 /* раздел с описанием автомобиля STYLES ARE BELOW */
+
+h2.description__name {
+    font-family: "Open Sans Bold";
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 41px;
+    outline: 1px solid purple;
+    padding-left: 5px;
+}
+
+.description__features {
+    outline: 1px solid turquoise;
+    display: flex;
+}
+
+.description__features li {
+    display: block;
+    height: 100px;
+    width: 80px;
+    outline: 1px solid olive;
+    text-align: center;
+    padding-top: 60px;
+    background: url("img/spriteset.png") no-repeat center;
+}
+
+
+.description__features li.features__gasoline {
+    background-position: -110px -10px;
+}
+
+.description__features li.features__gearbox {
+    background-position: -223px -10px;
+}
+
+.description__features li.features__horsepower {
+    background-position: -10px -10px;
+}
+
+.description__features li.features__displacement {
+    background-position: -323px -10px;
+}
+
+
+.description__price {
+    outline: 1px solid sienna;
+    padding-top: 20px;
+    padding-left: 5px;
+}
+
+.description__price span {
+    display: inline-block;
+}
+
+.description__price-current {
+    font-family: "Open Sans Bold";
+    font-size: 35px;
+    line-height: 48px;
+}
+
+.description__price-crossed-out {
+    margin-left: 37px;
+    position: relative;
+    top: -5px;
+    font-family: "Open Sans Regular";
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 27px;
+    color: rgba(72, 73, 77, 0.5);
+}
+
+.description__price-crossed-out::after {
+    display: block;
+    background: rgba(72, 73, 77, 0.5);
+    width: 123px;
+    height: 1px;
+    content: "";
+    transform: rotate(-5.5deg) translateY(-12px);
+}
+
+.description button {
+    display: block;
+    height: 52px;
+    border: 1px solid #D12136;
+    margin-left: 2px;
+    font-family: "Open Sans 600";
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.description__button-purchase {
+    color: white;
+    background-color: #D12136;
+    margin-top: 37px;
+    width: 196px;
+}
+
+.description__button-loan {
+    color: #D12136;
+    background-color: white;
+    width: 222px;
+    margin-top: 16px;
+}
+
+
+
+
+
+
+/* раздел с таблицами STYLES ARE BELOW */
+
+div.tables--inactive {
+    display: none;
+}
+
+    /* таблица с особеностями автомобиля STYLES ARE BELOW */
+
+    
+
+    .tables__buttons {
+        margin-top: 20px;
+        font-size: 0;
+        margin-left: 5px;
+        outline: 1px solid fuchsia;
+    }
+
+    .tables__buttons button {
+        display: inline-block;
+        width: 195px;
+        height: 50px;
+        font-family: "Open Sans Regular";
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 27px;
+        text-align: center;
+        margin-left: 0;
+        margin-right: 0;
+        color: #48494D;
+        background-color: white;
+        border: 1px solid #D7D9DF;
+    }
+
+    button.tables__buttons-active {
+        color: white;
+        background-color: #D12136;
+        border-color: #D12136;
+    }
+
+
+    table.features__table {
+        width: 565px;
+        border-collapse: collapse;
+        outline: 1px solid green;
+        margin-left: 4px;
+        margin-top: 10px;
+    }
+
+    table.features__table tr {
+        border-bottom: 1px solid #D7D9DF;
+        height: 50px;
+    }
+
+    table.features__table td {
+        font-family: "Open Sans Regular";
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 22px;
+        vertical-align: bottom;
+        padding-bottom: 7px;
+    }
+
+
+
+    table.features__table td:first-child {
+        color: #48494D;
+    }
+
+    table.features__table td:last-child {
+        color: black;
+        text-align: right;
+    }
+
+    
+
+
+
+
+
+
 
 
 

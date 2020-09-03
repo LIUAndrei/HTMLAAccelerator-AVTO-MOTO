@@ -31,14 +31,15 @@
             <!-- ниже размечен раздел с фотографией машины и слайдером для выбора одной из трех фотографий -->
 
             <div class="main__top-left picture-slider">
-                <div class="picture-slider__picture">
-                    <img class="active" src="pictures/full-pic-1.png" alt="Фото автомобиля" width="600px" height="375px">
-                    <img class="inactive" src="pictures/full-pic-2.png" alt="Фото автомобиля" width="600px" height="375px">
-                    <img class="inactive" src="pictures/full-pic-3.png" alt="Фото автомобиля" width="600px" height="375px">
+                <div class="picture-slider__picture fullpic">
+                    <img class="fullpic__active" src="pictures/full-pic-1.png" alt="Фото автомобиля" width="600px" height="375px">
+                    <img class="fullpic__inactive" src="pictures/full-pic-2.png" alt="Фото автомобиля" width="600px" height="375px">
+                    <img class="fullpic__inactive" src="pictures/full-pic-3.png" alt="Фото автомобиля" width="600px" height="375px">
                 </div>
                 <div class="picture-slider__slider slider">
 
                     <button class="slider__button">
+                        <span class="slider__button-arrow-left slider__button-inactive"></span>
                     </button>
 
                     <a href=""><img src="pictures/thumbnail-1.png" alt="Экстерьер" width="128px" height="80px"></a>
@@ -46,6 +47,7 @@
                     <a href=""><img src="pictures/thumbnail-3.png" alt="Спидометр"  width="128px" height="80px"></a>
 
                     <button class="slider__button">
+                        <span class="slider__button-arrow-right"></span> 
                     </button>
                     
                 </div>
@@ -55,27 +57,88 @@
 
             <div class="main__top-right description"> 
                 <h2 class="description__name">Марпех 11</h2>
-                <div class="description__features features">
-                    <div class="features__gasoline">бензин</div>
-                    <div class="features__gearbox">механика</div>
-                    <div class="features__horsepower">100 л.с.</div>
-                    <div class="features__displacement">1.4 л</div>
-                </div>
-                <div class="description__price">2 300 000 ₽</div>
+                
+                    <ul class="description__features features">
+                        <li class="features__gasoline">бензин</li>
+                        <li class="features__gearbox">механика</li>
+                        <li class="features__horsepower">100 л.с.</li>
+                        <li class="features__displacement">1.4 л</li>
+                    </ul>
+                
+                <div class="description__price"><span class="description__price-current">2 300 000 ₽</span><span class="description__price-crossed-out">2 &nbsp400 000 ₽</span></div>
 
 
-                <button class="description__button-purchase">оставить заявку</button>
-                <button class="description__button-loan">В КРЕДИТ ОТ 11 000 ₽</button>
+                <button id="purchase" class="description__button-purchase">оставить заявку</button>
+                <button id="loan" class="description__button-loan">В КРЕДИТ ОТ 11 000 ₽</button>
             </div>
 
             <!-- ниже размечен раздел с таблицами -->
 
-            <div class="main__bottom-right">
-                
-                
-                таблица
-            
-            
+            <div class="main__bottom-right tables">
+
+                <div class="tables__buttons">
+                        <button>Характеристики</button>
+                        <button class="tables__buttons-active">Отзывы</button>
+                        <button>Контакты</button>
+                </div>
+
+                <!-- ниже размечена таблица с особеностями автомобиля -->
+                <div class="tables__features features tables--inactive">
+                    <table class="features__table">
+                        <tr>
+                            <td>Трансмиссия</td>
+                            <td>Роботизированная</td>
+                        </tr>
+                        <tr>
+                            <td>Мощность двигателя, л.с.</td>
+                            <td>249</td>
+                        </tr>
+                        <tr>
+                            <td>Тип двигателя</td>
+                            <td>Бензиновый</td>
+                        </tr>
+                        <tr>
+                            <td>Привод</td>
+                            <td>Полный</td>
+                        </tr>
+                        <tr>
+                            <td>Объем двигателя, л</td>
+                            <td>2.4</td>
+                        </tr>
+                        <tr>
+                            <td>Макс. крутящий момент</td>
+                            <td>370/4500</td>
+                        </tr>
+                        <tr>
+                            <td>Количество цилиндров</td>
+                            <td>4</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- ниже размечен раздел отзывов -->
+                <div class="tables__feedback feedback tables--active">
+                    <blockquote>
+                        <cite>Борис Иванов</cite>
+                        <dl>
+                            <dt><span>+</span>Достоинства</dt>
+                            <dd>мощность, внешний вид</dd>
+                            <dt><span>-</span>Недостатки</dt>
+                            <dd>Слабые тормозные колодки (пришлось заменить)</dd>
+                            <dt>Комментарий</dt>
+                            <dd>Взяли по трейд-ин, на выгодных условиях у дилера. Стильная внешка и крут по базовым характеристикам. Не думал, что пересяду на китайский автопром, но сейчас гоняю и понимаю, что полностью доволен.</dd>
+                        </dl>
+                    </blockquote>
+                    <blockquote>
+                        <cite>Марсель Исмагилов</cite>
+                    </blockquote>
+                </div>
+
+                <!-- ниже размечен раздел контактов -->
+                <div class="tables__contacts contacts tables--inactive">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum, eaque?
+
+                </div>
             
             </div>
 
