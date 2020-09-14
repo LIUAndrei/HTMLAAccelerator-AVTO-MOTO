@@ -76,8 +76,8 @@
 
                 <div class="tables__buttons">
                         <button class="tables__buttons-inactive">Характеристики</button>
-                        <button class="tables__buttons-inactive">Отзывы</button>
-                        <button class="tables__buttons-active">Контакты</button>
+                        <button class="tables__buttons-active">Отзывы</button>
+                        <button class="tables__buttons-inactive">Контакты</button>
                 </div>
 
                 <!-- ниже размечена таблица с особеностями автомобиля -->
@@ -115,26 +115,63 @@
                 </div>
 
                 <!-- ниже размечен раздел отзывов -->
-                <div class="table tables__feedback feedback tables--inactive">
+                <div class="table tables__feedback feedback tables--active">
                     <blockquote class="feedback__unit">
                         <cite>Борис Иванов</cite>
-                        <dl>
-                            <dt><span class="feedback__unit--redtext">+</span>Достоинства</dt>
+                        <button id="feedback__button" class="feedback__button">оставить отзыв</button>
+                        <dl class="feedback__plus-minus">
+                            <dt>Достоинства</dt>
                             <dd>мощность, внешний вид</dd>
-                            <dt><span class="feedback__unit--redtext">-</span>Недостатки</dt>
+                            <dt>Недостатки</dt>
                             <dd>Слабые тормозные колодки (пришлось заменить)</dd>
+                        </dl>
+                        <dl class="feedback__comment">
                             <dt>Комментарий</dt>
                             <dd>Взяли по трейд-ин, на выгодных условиях у дилера. Стильная внешка и крут по базовым характеристикам. Не думал, что пересяду на китайский автопром, но сейчас гоняю и понимаю, что полностью доволен.</dd>
                         </dl>
+                        <div class="feedback__fivestar fivestar">
+                            <img src="img/RedStar.svg" alt="Red Star" width="17" height="17">
+                            <img src="img/RedStar.svg" alt="Red Star" width="17" height="17">
+                            <img src="img/RedStar.svg" alt="Red Star" width="17" height="17">
+                            <img src="img/RedStar.svg" alt="Red Star" width="17" height="17">
+                            <img src="img/Star.svg" alt="Star" width="17" height="17">
+                            <span class="fivestar__recommend">Советует</span>
+                        </div>
+                        <div class="feedback__answer">
+                            <time>1 минуту назад</time>
+                            <a href="#">Ответить</a>
+                        </div>
                     </blockquote>
                     <blockquote class="feedback__unit">
                         <cite>Марсель Исмагилов</cite>
+                        <dl class="feedback__plus-minus">
+                            <dt>Достоинства</dt>
+                            <dd>Cтиль, комфорт, управляемость</dd>
+                            <dt>Недостатки</dt>
+                            <dd>Дорогой ремонт и обслуживание</dd>
+                        </dl>
+                        <dl class="feedback__comment">
+                            <dt>Комментарий</dt>
+                            <dd>Дизайн отличный, управление просто шикарно, ощущения за рулём такой машины особые. Но ремонт очень дорогой. Пару месяцев назад пришлось менять двигатель. По стоимости вышло как новый автомобиль. Так что, если покупать эту машину, надо быть готовым к большим расходам на обслуживание.</dd>
+                        </dl>
+                        <div class="feedback__fivestar fivestar">
+                            <img src="img/RedStar.svg" alt="Red Star" width="17" height="17">
+                            <img src="img/RedStar.svg" alt="Red Star" width="17" height="17">
+                            <img src="img/RedStar.svg" alt="Red Star" width="17" height="17">
+                            <img src="img/RedStar.svg" alt="Red Star" width="17" height="17">
+                            <img src="img/Star.svg" alt="Star" width="17" height="17">
+                            <span class="fivestar__recommend">Советует</span>
+                        </div>
+                        <div class="feedback__answer">
+                            <time>1 минуту назад</time>
+                            <a href="#">Ответить</a>
+                        </div>
                     </blockquote>
-                    <button id="feedback__button">button for modal</button>
+                    
                 </div>
 
                 <!-- ниже размечен раздел контактов -->
-                <div class="table tables__contacts contacts tables--active">
+                <div class="table tables__contacts contacts tables--inactive">
                     <div class="contacts__contacts-list contacts-list ">
                         <h4 class="contacts-list__address-header">Адрес</h4>
                         <address class="contacts-list__address">Санкт-Петербург,<br>

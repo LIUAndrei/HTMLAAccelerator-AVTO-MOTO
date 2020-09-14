@@ -523,8 +523,9 @@ ul.header__navlist li {
 
 
 main {
-    height: 1224px;
+    height: auto;
     padding-top: 74px;
+    min-height: 1224px;
 }
 
 
@@ -539,18 +540,15 @@ main {
 .main__top-left {
     grid-row-start: 1;
     grid-column-start: 1;
-    outline: 1px solid yellowgreen;
     padding-top: 15px;
 }
 
 .main__top-right {
     grid-row-start: 1;
     grid-column-start: 2;
-    outline: 1px solid yellowgreen;
 }
 
 .main__bottom-right {
-    outline: 1px solid yellowgreen;
     grid-column: 1 / span 2;
 }
 
@@ -564,7 +562,6 @@ main {
 
 .picture-slider__slider {
     margin-top: 35px;
-    outline: 1px solid red;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -639,12 +636,10 @@ h2.description__name {
     font-weight: bold;
     font-size: 30px;
     line-height: 41px;
-    outline: 1px solid purple;
     padding-left: 5px;
 }
 
 .description__features {
-    outline: 1px solid turquoise;
     display: flex;
 }
 
@@ -652,7 +647,6 @@ h2.description__name {
     display: block;
     height: 100px;
     width: 80px;
-    outline: 1px solid olive;
     text-align: center;
     padding-top: 60px;
     background: url("img/spriteset.png") no-repeat center;
@@ -677,7 +671,6 @@ h2.description__name {
 
 
 .description__price {
-    outline: 1px solid sienna;
     padding-top: 20px;
     padding-left: 5px;
 }
@@ -747,7 +740,7 @@ h2.description__name {
 
 /* раздел с таблицами STYLES ARE BELOW */
 
-div.tables--inactive {
+div.table.tables--inactive {
     display: none;
 }
 
@@ -759,7 +752,6 @@ div.tables--inactive {
 
 .tables__buttons {
     font-size: 0;
-    outline: 1px solid fuchsia;
     margin-bottom: 20px;
 }
 
@@ -795,7 +787,6 @@ button.tables__buttons-active {
     table.features__table {
         width: 565px;
         border-collapse: collapse;
-        outline: 1px solid green;
         margin-top: 10px;
     }
 
@@ -829,8 +820,21 @@ button.tables__buttons-active {
     
     /* ниже стилизован раздел отзывов */
 
+    /* <span class="feedback__unit--redtext">+</span> */
+
+
     .tables__feedback {
-        outline: 1px solid hotpink;
+        clear: both;
+    }
+
+    blockquote.feedback__unit {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        padding-top: 10px;
+        padding-bottom: 18px;
+    }
+
+    blockquote.feedback__unit:not(:first-child) {
+        padding-top: 20px;
     }
 
 
@@ -840,21 +844,131 @@ button.tables__buttons-active {
         font-weight: 600;
         font-size: 20px;
         line-height: 27px;
+        height: 28px;
         color: #48494D;
     }
 
-    .feedback__unit dt {
+    blockquote.feedback__unit dl {
+        margin-top: 13px;
+    }
+
+    dl.feedback__plus-minus dd,
+    dl.feedback__plus-minus dt {
+        height: 21px;
+    }
+
+   
+
+    blockquote.feedback__unit dt {
         font-family: "Open Sans 600";
         font-style: normal;
         font-weight: 600;
         font-size: 15px;
         line-height: 20px;
+        margin-bottom: 3px;
         color: #000000;
     }
 
-    span.feedback__unit--redtext {
-        color: #D12136;
+    blockquote.feedback__unit dd {
+        font-family: "Open Sans Regular";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 20px;
+        margin-bottom: 3px;
+        color: #000000;
+        margin-bottom: 13px;
     }
+
+    dl.feedback__plus-minus {
+        padding-left: 19px;
+    }
+
+    
+    dl.feedback__plus-minus dt::before {
+        color: #D12136;
+        position: absolute;
+        left: 375px;
+    }
+
+    dl.feedback__plus-minus dt:first-of-type::before {
+        content: "+";
+    }
+
+    dl.feedback__plus-minus dt:last-of-type::before {
+        content: "-";
+    }
+
+    
+
+    dl.feedback__comment dd {
+        height: 41px;
+    }
+
+    dl.feedback__comment dt {
+        height: 21px;
+    }
+
+    div.feedback__fivestar {
+        margin-top: 20px;
+    }
+
+
+    div.feedback__answer {
+        margin-top: 24px;
+    }
+
+
+    div.feedback__answer time {
+        font-family: "Open Sans Regular";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 19px;
+        color: #000000;
+        opacity: 0.4;
+    }
+
+    div.feedback__answer a {
+        font-family: "Open Sans Regular";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 22px;
+        color: #D12136;     
+        margin-left: 23px;                        
+    }
+
+
+    span.fivestar__recommend {
+        font-family: "Open Sans Regular";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 20px;
+        color: #D12136;
+        margin-left: 16px;
+    }
+
+    button.feedback__button {
+        float: right;
+        margin-right: 8px;
+        font-family: "Open Sans 600";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 19px;
+        text-align: center;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #D12136;
+        height: 52px;
+        width: 189px;
+        background: transparent;
+        border: 1px solid #D12136;
+    }
+
+
 
 
 /* ниже стилизован раздел контактов */
@@ -868,7 +982,6 @@ button.tables__buttons-active {
     div.contacts__contacts-list {
         width: 274px;
         height: 274px;
-        outline: 1px solid firebrick;
         padding-top: 0;
     }
 
@@ -879,18 +992,26 @@ button.tables__buttons-active {
         font-size: 16px;
         line-height: 22px;
         color: #1A212F;
-        padding-bottom: 10px;
+        height: 12px;
+        margin-bottom: 15px;
     }
 
-    h4.contacts-list__address-header {
+    div.contacts__contacts-list h4.contacts-list__address-header {
+        margin-bottom: 18px;
         margin-top: -5px;
-        padding-bottom: 10px;
     }
 
     address.contacts-list__address {
-        padding-bottom: 10px;
+        height: 32px;
+        margin-bottom: 23px;
     }
 
+    div.contacts__contacts-list a,
+    div.contacts__contacts-list p {
+        display: inline-block;
+        margin-bottom: 34px;
+        height: 12px;
+    }
 
     div.contacts__contacts-list address,
     div.contacts__contacts-list p,
@@ -923,7 +1044,6 @@ footer a {
 footer li {
     float: left;
     margin-right: 66px;
-    outline: 1px solid blue;
 }
 
 footer li:last-of-type {
@@ -975,7 +1095,6 @@ footer li:last-of-type {
     display: grid;
     grid-template-columns: 300px 300px;
     grid-template-rows: auto auto auto auto;
-    outline: 1px solid green;
     row-gap: 16px;
     column-gap: 28px;
 }
