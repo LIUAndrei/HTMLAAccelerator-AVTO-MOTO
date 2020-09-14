@@ -29,25 +29,23 @@
         <div class="narrow-down-container main__gridcontainer">
 
             <!-- ниже размечен раздел с фотографией машины и слайдером для выбора одной из трех фотографий -->
-
+            <!-- для работоспособности слайдера все тумбинахи дождны иметь имя в виде thumbnail-№.png, а полноразмерные фото - full-pic-№.png -->
             <div class="main__top-left picture-slider">
                 <div class="picture-slider__picture fullpic">
                     <img class="fullpic__active" src="pictures/full-pic-1.png" alt="Фото автомобиля" width="600px" height="375px">
-                    <img class="fullpic__inactive" src="pictures/full-pic-2.png" alt="Фото автомобиля" width="600px" height="375px">
-                    <img class="fullpic__inactive" src="pictures/full-pic-3.png" alt="Фото автомобиля" width="600px" height="375px">
                 </div>
                 <div class="picture-slider__slider slider">
 
-                    <button class="slider__button">
-                        <span class="slider__button-arrow-left slider__button-inactive"></span>
+                    <button id="button-previous" class="slider__button slider__button-inactive">
+                        <span id="arrow-previous" class="slider__button-arrow-left slider__button-inactive"></span>
                     </button>
 
-                    <a href=""><img src="pictures/thumbnail-1.png" alt="Экстерьер" width="128px" height="80px"></a>
-                    <a href=""><img src="pictures/thumbnail-2.png" alt="Интерьер"  width="128px" height="80px"></a>
-                    <a href=""><img src="pictures/thumbnail-3.png" alt="Спидометр"  width="128px" height="80px"></a>
+                    <a href="#"><img src="pictures/thumbnail-1.png" alt="Экстерьер" width="128px" height="80px"></a>
+                    <a href="#"><img src="pictures/thumbnail-2.png" alt="Интерьер"  width="128px" height="80px"></a>
+                    <a href="#"><img src="pictures/thumbnail-3.png" alt="Спидометр"  width="128px" height="80px"></a>
 
-                    <button class="slider__button">
-                        <span class="slider__button-arrow-right"></span> 
+                    <button id="button-next" class="slider__button">
+                        <span id="arrow-next" class="slider__button-arrow-right"></span> 
                     </button>
                     
                 </div>
@@ -77,13 +75,13 @@
             <div class="main__bottom-right tables">
 
                 <div class="tables__buttons">
-                        <button>Характеристики</button>
-                        <button class="tables__buttons-active">Отзывы</button>
-                        <button>Контакты</button>
+                        <button class="tables__buttons-inactive">Характеристики</button>
+                        <button class="tables__buttons-inactive">Отзывы</button>
+                        <button class="tables__buttons-active">Контакты</button>
                 </div>
 
                 <!-- ниже размечена таблица с особеностями автомобиля -->
-                <div class="tables__features features tables--inactive">
+                <div class="table tables__features features tables--inactive">
                     <table class="features__table">
                         <tr>
                             <td>Трансмиссия</td>
@@ -117,30 +115,61 @@
                 </div>
 
                 <!-- ниже размечен раздел отзывов -->
-                <div class="tables__feedback feedback tables--active">
-                    <blockquote>
+                <div class="table tables__feedback feedback tables--inactive">
+                    <blockquote class="feedback__unit">
                         <cite>Борис Иванов</cite>
                         <dl>
-                            <dt><span>+</span>Достоинства</dt>
+                            <dt><span class="feedback__unit--redtext">+</span>Достоинства</dt>
                             <dd>мощность, внешний вид</dd>
-                            <dt><span>-</span>Недостатки</dt>
+                            <dt><span class="feedback__unit--redtext">-</span>Недостатки</dt>
                             <dd>Слабые тормозные колодки (пришлось заменить)</dd>
                             <dt>Комментарий</dt>
                             <dd>Взяли по трейд-ин, на выгодных условиях у дилера. Стильная внешка и крут по базовым характеристикам. Не думал, что пересяду на китайский автопром, но сейчас гоняю и понимаю, что полностью доволен.</dd>
                         </dl>
                     </blockquote>
-                    <blockquote>
+                    <blockquote class="feedback__unit">
                         <cite>Марсель Исмагилов</cite>
                     </blockquote>
+                    <button id="feedback__button">button for modal</button>
                 </div>
 
                 <!-- ниже размечен раздел контактов -->
-                <div class="tables__contacts contacts tables--inactive">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum, eaque?
+                <div class="table tables__contacts contacts tables--active">
+                    <div class="contacts__contacts-list contacts-list ">
+                        <h4 class="contacts-list__address-header">Адрес</h4>
+                        <address class="contacts-list__address">Санкт-Петербург,<br>
+                            набережная реки Карповки, дом 5</address>
+                        <h4>Режим работы</h4>
+                        <p>Ежедневно, с <time>10:00</time> до <time>21:00</time></p>
+                        <h4>Телефон</h4>
+                        <a href="tel:+88003335599">8 (800) 333-55-99</a>
+                        <h4>E-mail</h4>
+                        <a href="mailto:info@avto-moto.ru">info@avto-moto.ru</a>
+                    </div>
+                    
+                    <div class="contacts__map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1627.6186145760237!2d30.314278663083183!3d59.96826218937407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x402dad0dd1f6ebcd!2z0JPRgNCw0L3QtCDQn9C10YLRgNC-0LPRgNCw0LTRgdC60LjQuQ!5e1!3m2!1sen!2s!4v1600000672165!5m2!1sen!2s" width="431" height="271" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></div>
 
                 </div>
             
             </div>
+
+        </div>
+
+        <!-- ниже размечен попап для отзывов -->
+        <div class="greyout-overlay modal-visually-hidden"></div>
+        <div class="modal modal-visually-hidden">
+            <h3 class="modal__header">Оставить отзыв</h3>
+            <button class="modal__close-button">x</button>
+            <form class="modal__form" action="">
+                <input id="modal__form--name" type="text" placeholder="Имя">
+                <input id="modal__form--qualities" type="text" placeholder="Достоинства">
+                <input id="modal__form--drawbacks" type="text" placeholder="Недостатки">
+                <div class="modal__form--stars">Оцените товар:</div>
+                <textarea id="modal__form--comment"  name="comments" cols="10" rows="3" placeholder="Комментарий"></textarea>
+                <input id="modal__form--submit" type="submit" value="оставить отзыв">
+            </form>
+
+
 
         </div>
     </main>
@@ -158,5 +187,12 @@
             </ul>
         </div>
     </footer>
+    <script src="script.js"></script>
+
+    
+
+
+
+
 </body>
 </html>

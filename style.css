@@ -465,7 +465,6 @@ a {
 .narrow-down-container { /* this container makes everything narrower */
     width: 1180px;
     height: 100%;
-   /* outline: 1px solid coral; */
     margin: 0 auto;
 }
 
@@ -476,6 +475,10 @@ a {
 }
 
 
+
+
+
+
 /* <header> STYLES ARE BELOW */
 
 
@@ -484,7 +487,6 @@ a {
 header {
     height: 84px;
     background: #F5F5F9;
-    outline: 1px solid coral;
 }
 
 header a {
@@ -495,7 +497,6 @@ header a {
 }
 
 .header__logo {
-    outline: 1px solid black;
 }
 
 .header__flexbox {
@@ -505,13 +506,11 @@ header a {
 }
 
 ul.header__navlist {
-    outline: 1px solid blue;
     padding-top: 31px;
 }
 
 ul.header__navlist li {
     display: inline-block;
-    outline: 1px solid yellowgreen;
     margin-left: 68px;
 }
 
@@ -625,6 +624,7 @@ main {
 
 .slider__button-inactive {
     border-color: #D7D9DF;
+    pointer-events: none;
 }
 
 .slider__button-inactive::after {
@@ -751,45 +751,51 @@ div.tables--inactive {
     display: none;
 }
 
+.main__bottom-right {
+    padding-top: 20px;
+    padding-left: 5px;
+}
+
+
+.tables__buttons {
+    font-size: 0;
+    outline: 1px solid fuchsia;
+    margin-bottom: 20px;
+}
+
+.tables__buttons button {
+    display: inline-block;
+    width: 195px;
+    height: 50px;
+    font-family: "Open Sans Regular";
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 27px;
+    text-align: center;
+    margin-left: 0;
+    margin-right: 0;
+    color: #48494D;
+    background-color: white;
+    border: 1px solid #D7D9DF;
+}
+
+button.tables__buttons-active {
+    color: white;
+    background-color: #D12136;
+    border-color: #D12136;
+}
+
+
+
     /* таблица с особеностями автомобиля STYLES ARE BELOW */
 
     
-
-    .tables__buttons {
-        margin-top: 20px;
-        font-size: 0;
-        margin-left: 5px;
-        outline: 1px solid fuchsia;
-    }
-
-    .tables__buttons button {
-        display: inline-block;
-        width: 195px;
-        height: 50px;
-        font-family: "Open Sans Regular";
-        font-weight: normal;
-        font-size: 20px;
-        line-height: 27px;
-        text-align: center;
-        margin-left: 0;
-        margin-right: 0;
-        color: #48494D;
-        background-color: white;
-        border: 1px solid #D7D9DF;
-    }
-
-    button.tables__buttons-active {
-        color: white;
-        background-color: #D12136;
-        border-color: #D12136;
-    }
 
 
     table.features__table {
         width: 565px;
         border-collapse: collapse;
         outline: 1px solid green;
-        margin-left: 4px;
         margin-top: 10px;
     }
 
@@ -818,15 +824,87 @@ div.tables--inactive {
         text-align: right;
     }
 
+
+
     
+    /* ниже стилизован раздел отзывов */
+
+    .tables__feedback {
+        outline: 1px solid hotpink;
+    }
 
 
+    .feedback__unit cite {
+        font-family: "Open Sans 600";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 27px;
+        color: #48494D;
+    }
+
+    .feedback__unit dt {
+        font-family: "Open Sans 600";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 20px;
+        color: #000000;
+    }
+
+    span.feedback__unit--redtext {
+        color: #D12136;
+    }
 
 
+/* ниже стилизован раздел контактов */
+
+    div.tables__contacts {
+        display: grid;
+        grid-template-columns: 350px auto;
+        margin-top: 30px;
+    }
+
+    div.contacts__contacts-list {
+        width: 274px;
+        height: 274px;
+        outline: 1px solid firebrick;
+        padding-top: 0;
+    }
+
+    div.contacts__contacts-list h4 {
+        font-family: "Open Sans Bold";
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 22px;
+        color: #1A212F;
+        padding-bottom: 10px;
+    }
+
+    h4.contacts-list__address-header {
+        margin-top: -5px;
+        padding-bottom: 10px;
+    }
+
+    address.contacts-list__address {
+        padding-bottom: 10px;
+    }
 
 
+    div.contacts__contacts-list address,
+    div.contacts__contacts-list p,
+    div.contacts__contacts-list a {
+        font-family: "Open Sans 600";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 19px;
+        color: #1A212F;
+    }
 
 
+    
 
 
 /* <footer> STYLES ARE BELOW */
@@ -850,4 +928,125 @@ footer li {
 
 footer li:last-of-type {
     margin: 0;
+}
+
+/* popup STYLES ARE BELOW */
+
+.modal-visually-hidden {
+    display: none;
+}
+
+.greyout-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%, -50% );
+    width: 698px;
+    height: 415px;
+    background: #F5F5F9;
+    z-index: 10;
+    padding: 30px 35px 35px 35px;
+    text-align: center;
+}
+
+
+
+.modal__header {
+    display: inline-block;
+    font-family: "Open Sans 600";
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 34px;
+    color: #48494D;
+    margin-bottom: 24px;
+}
+
+.modal__form {
+    display: grid;
+    grid-template-columns: 300px 300px;
+    grid-template-rows: auto auto auto auto;
+    outline: 1px solid green;
+    row-gap: 16px;
+    column-gap: 28px;
+}
+
+#modal__form--name {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    height: 50px;
+}
+
+#modal__form--qualities {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    height: 50px;
+}
+
+#modal__form--drawbacks {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    height: 50px;
+}
+
+.modal__form--stars {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+#modal__form--comment {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+
+#modal__form--submit {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    width: 190px;
+    height: 52px;
+    background-color: #D12136;
+    border: none;
+    color: white;
+    font-family: "Open Sans 600";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-top: 35px;
+}
+
+.modal__close-button {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    width: 15px;
+    height: 16px;
+    background: transparent;
+    border: none;
+    font-size: 0;
+    background: url("img/closebutton.svg") bottom no-repeat;
 }
