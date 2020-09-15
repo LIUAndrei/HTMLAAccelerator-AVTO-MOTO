@@ -115,3 +115,45 @@
         });
 
        
+
+/* adding a comment off of a popup to the comment section logic is below */
+
+        const commentForm = document.querySelector('.modal__form');
+        const commentBox = document.querySelector('#modal__form--comment');
+        const feedbackSection = document.querySelector('.tables__feedback');
+        const feedbackButtonContainer = document.querySelector('.feedback__button-container');
+        const feedbackUnit = document.querySelector('.feedback__unit');
+
+
+        let feedbackInWork = feedbackUnit.cloneNode(true);
+        
+        let feedbackName = feedbackInWork.querySelector('cite');
+        let feedbackAdvantages = feedbackInWork.querySelector('.feedback__plus-minus--advantages');
+        let feedbackDrawbacks = feedbackInWork.querySelector('.feedback__plus-minus--drawbacks');
+        let feedbackComment = feedbackInWork.querySelector('.feedback__plus-minus--comment');
+
+
+
+        commentForm.addEventListener('submit', function(evt) {
+            evt.preventDefault();
+
+            var newName = commentForm.querySelector('#modal__form--name');
+            var newAdvantage = commentForm.querySelector('#modal__form--qualities');
+            var newDrawback = commentForm.querySelector('#modal__form--drawbacks');
+            var newComment = commentForm.querySelector('#modal__form--comment');
+
+            feedbackName.textContent = newName.value;
+            feedbackAdvantages.textContent = newAdvantage.value;
+            feedbackDrawbacks.textContent = newDrawback.value;
+            feedbackComment.textContent = newComment.value;
+
+            feedbackButtonContainer.after(feedbackInWork);
+
+            newName.value = '';
+            newAdvantage.value = '';
+            newDrawback.value = '';
+            newComment.value = '';
+
+            commentPopup.classList.add("modal-visually-hidden");
+            commentGreyoutOverlay.classList.add("modal-visually-hidden");
+        });

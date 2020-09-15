@@ -820,12 +820,13 @@ button.tables__buttons-active {
     
     /* ниже стилизован раздел отзывов */
 
-    /* <span class="feedback__unit--redtext">+</span> */
 
-
-    .tables__feedback {
+    div.feedback__button-container {
         clear: both;
+        margin-bottom: 0;
+        padding-bottom: 0;
     }
+   
 
     blockquote.feedback__unit {
         border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -833,7 +834,7 @@ button.tables__buttons-active {
         padding-bottom: 18px;
     }
 
-    blockquote.feedback__unit:not(:first-child) {
+    blockquote.feedback__unit:not(:first-of-type) {
         padding-top: 20px;
     }
 
@@ -888,7 +889,7 @@ button.tables__buttons-active {
     dl.feedback__plus-minus dt::before {
         color: #D12136;
         position: absolute;
-        left: 375px;
+        left: 0px;
     }
 
     dl.feedback__plus-minus dt:first-of-type::before {
@@ -952,6 +953,7 @@ button.tables__buttons-active {
 
     button.feedback__button {
         float: right;
+        margin-top: 10px;
         margin-right: 8px;
         font-family: "Open Sans 600";
         font-style: normal;
@@ -1168,4 +1170,14 @@ footer li:last-of-type {
     border: none;
     font-size: 0;
     background: url("img/closebutton.svg") bottom no-repeat;
+}
+
+
+form.modal__form::placeholder {
+    font-family: "Open Sans Regular";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    color: #48494D;
 }
