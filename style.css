@@ -930,7 +930,7 @@ button.tables__buttons-active {
     }
 
 
-    div.feedback__answer time {
+    div.feedback__answer p.time {
         font-family: "Open Sans Regular";
         font-style: normal;
         font-weight: normal;
