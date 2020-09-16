@@ -474,6 +474,11 @@ a {
     clear: both;
 }
 
+.global-hover:hover,
+#modal__form--submit:hover {
+    color: white;
+    background-color:#BD0C21;
+}
 
 
 
@@ -726,6 +731,8 @@ h2.description__name {
     width: 196px;
 }
 
+
+
 .description__button-loan {
     color: #D12136;
     background-color: white;
@@ -733,7 +740,10 @@ h2.description__name {
     margin-top: 16px;
 }
 
-
+.description__button-loan:hover {
+    background: #D12136;
+    color: white;
+}
 
 
 
@@ -970,7 +980,10 @@ button.tables__buttons-active {
         border: 1px solid #D12136;
     }
 
-
+    button.feedback__button:hover {
+        color: white;
+        background: #D12136;
+    }
 
 
 /* ниже стилизован раздел контактов */
@@ -1052,6 +1065,11 @@ footer li:last-of-type {
     margin: 0;
 }
 
+
+
+
+
+
 /* popup STYLES ARE BELOW */
 
 .modal-visually-hidden {
@@ -1094,12 +1112,56 @@ footer li:last-of-type {
 }
 
 .modal__form {
+    position: relative;
+    text-align: left;
     display: grid;
     grid-template-columns: 300px 300px;
     grid-template-rows: auto auto auto auto;
     row-gap: 16px;
     column-gap: 28px;
+    margin-top: 24px;
 }
+
+form.modal__form label {
+    display: none;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    color: #FF0000;
+}
+
+
+
+.modal__form input[type="text"] {
+    padding-left: 25px;
+    padding-right: 15px;
+}
+
+.modal__form textarea {
+    padding: 15px 15px 15px 25px;
+}
+
+label[for="modal__form--name"] {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    position: relative;
+    top: -23px;
+}
+
+label[for="modal__form--comment"] {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    position: relative;
+    top: -23px;
+}
+
+
 
 #modal__form--name {
     grid-row-start: 1;
@@ -1107,6 +1169,19 @@ footer li:last-of-type {
     grid-column-start: 1;
     grid-column-end: 2;
     height: 50px;
+}
+
+span.required-asterisk:first-of-type {
+    font-size: 17px;
+    line-height: 20px;
+    color: #D12136;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    z-index: 30;
+    position: relative;
+
 }
 
 #modal__form--qualities {
@@ -1130,6 +1205,19 @@ footer li:last-of-type {
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 2;
+    height: 50px;
+
+}
+
+.modal__form--stars p {
+    display: inline-block;
+    font-family: "Open Sans 600";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20px;
+    color: #000000;
+    margin-bottom: 40px;
 }
 
 #modal__form--comment {
@@ -1158,6 +1246,8 @@ footer li:last-of-type {
     letter-spacing: 0.12em;
     text-transform: uppercase;
     margin-top: 35px;
+    display: inline-block;
+    margin: 18px auto 0 auto;
 }
 
 .modal__close-button {
@@ -1180,4 +1270,14 @@ form.modal__form::placeholder {
     font-size: 14px;
     line-height: 19px;
     color: #48494D;
+}
+
+div.modal__form--stars img {
+    margin-top: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+div.modal__form--stars img:last-of-type {
+    margin-right: 0;
 }

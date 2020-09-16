@@ -66,7 +66,7 @@
                 <div class="description__price"><span class="description__price-current">2 300 000 ₽</span><span class="description__price-crossed-out">2 &nbsp400 000 ₽</span></div>
 
 
-                <button id="purchase" class="description__button-purchase">оставить заявку</button>
+                <button id="purchase" class="description__button-purchase global-hover">оставить заявку</button>
                 <button id="loan" class="description__button-loan">В КРЕДИТ ОТ 11 000 ₽</button>
             </div>
 
@@ -75,13 +75,13 @@
             <div class="main__bottom-right tables">
 
                 <div class="tables__buttons">
-                        <button class="tables__buttons-inactive">Характеристики</button>
-                        <button class="tables__buttons-active">Отзывы</button>
-                        <button class="tables__buttons-inactive">Контакты</button>
+                        <button class="tables__buttons-active global-hover">Характеристики</button>
+                        <button class="tables__buttons-inactive global-hover">Отзывы</button>
+                        <button class="tables__buttons-inactive global-hover">Контакты</button>
                 </div>
 
                 <!-- ниже размечена таблица с особеностями автомобиля -->
-                <div class="table tables__features features tables--inactive">
+                <div class="table tables__features features tables--active">
                     <table class="features__table">
                         <tr>
                             <td>Трансмиссия</td>
@@ -115,7 +115,7 @@
                 </div>
 
                 <!-- ниже размечен раздел отзывов -->
-                <div class="table tables__feedback feedback tables--active">
+                <div class="table tables__feedback feedback tables--inactive">
                     <div class="feedback__button-container">
                         <button id="feedback__button" class="feedback__button">оставить отзыв</button> 
                     </div>
@@ -200,12 +200,23 @@
             <h3 class="modal__header">Оставить отзыв</h3>
             <button class="modal__close-button">x</button>
             <form class="modal__form" action="">
-                <input id="modal__form--name" type="text" placeholder="Имя">
+                <label for="modal__form--name">Пожалуйста, заполните поле</label>
+                <input id="modal__form--name" type="text" placeholder="Имя" required> <!-- <span class="required-asterisk">*</span> -->
+
                 <input id="modal__form--qualities" type="text" placeholder="Достоинства">
                 <input id="modal__form--drawbacks" type="text" placeholder="Недостатки">
-                <div class="modal__form--stars">Оцените товар:</div>
-                <textarea id="modal__form--comment"  name="comments" cols="10" rows="3" placeholder="Комментарий"></textarea>
-                <input id="modal__form--submit" type="submit" value="оставить отзыв">
+                <div class="modal__form--stars"><p>Оцените товар:</p>
+                    <img src="img/Star.svg" alt="Red Star" width="27" height="27">
+                    <img src="img/Star.svg" alt="Red Star" width="27" height="27">
+                    <img src="img/Star.svg" alt="Red Star" width="27" height="27">
+                    <img src="img/Star.svg" alt="Red Star" width="27" height="27">
+                    <img src="img/Star.svg" alt="Star" width="27" height="27">
+                </div>
+
+                <label for="modal__form--comment">Пожалуйста, заполните поле</label>
+                <textarea id="modal__form--comment"  name="comments" cols="10" rows="3" placeholder="Комментарий" required></textarea>
+
+                <input id="modal__form--submit" class="global-hover" type="submit" value="оставить отзыв">
             </form>
 
 

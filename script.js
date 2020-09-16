@@ -131,16 +131,58 @@
         let feedbackAdvantages = feedbackInWork.querySelector('.feedback__plus-minus--advantages');
         let feedbackDrawbacks = feedbackInWork.querySelector('.feedback__plus-minus--drawbacks');
         let feedbackComment = feedbackInWork.querySelector('.feedback__plus-minus--comment');
+        let feedbackStarRating = feedbackInWork.querySelectorAll('.feedback__fivestar img');
+        let feedbackStarRatingArry = Array.from(feedbackStarRating);
+
+
+        const submitButton = commentForm.querySelector('#modal__form--submit');
+
+
+        let newName = commentForm.querySelector('#modal__form--name');
+        let newAdvantage = commentForm.querySelector('#modal__form--qualities');
+        let newDrawback = commentForm.querySelector('#modal__form--drawbacks');
+        let newComment = commentForm.querySelector('#modal__form--comment');
+        let warningLabels = commentForm.querySelectorAll('label');
+        let warningLabelsArry = Array.from(warningLabels);
+
+        let starsInPopup =  commentForm.querySelectorAll('.modal__form--stars img');
+        let starsInPopupArry = Array.from(starsInPopup);
+        let starRating = 0;
+
+        starsInPopupArry.forEach(function(star) {
+            star.addEventListener("click", function() {
+                for (var i = 0; i <= starsInPopupArry.indexOf(star); i++) {
+                    starsInPopupArry[i].src = 'img/RedStar.svg';
+                    feedbackStarRatingArry[i].src = 'img/RedStar.svg'
+                }
+                for (var j = starsInPopupArry.indexOf(star) + 1; j < starsInPopupArry.length; j++) {
+                    starsInPopupArry[j].src = 'img/Star.svg';
+                    feedbackStarRatingArry[j].src = 'img/Star.svg'
+                }
+                starRating = starsInPopupArry.indexOf(star);
+            })
+        })
+
+
+
+
+
+
+        submitButton.addEventListener('click', function() {
+
+            if (newName.value === '' || newName.value === null || newComment.value === '' || newComment.value === null) {
+                for (var i = 0; i < warningLabelsArry.length; i++) {
+                    warningLabelsArry[i].style.display = 'inline';
+                } 
+            }  
+        })
+
+
 
 
 
         commentForm.addEventListener('submit', function(evt) {
             evt.preventDefault();
-
-            var newName = commentForm.querySelector('#modal__form--name');
-            var newAdvantage = commentForm.querySelector('#modal__form--qualities');
-            var newDrawback = commentForm.querySelector('#modal__form--drawbacks');
-            var newComment = commentForm.querySelector('#modal__form--comment');
 
             feedbackName.textContent = newName.value;
             feedbackAdvantages.textContent = newAdvantage.value;
@@ -153,6 +195,7 @@
             newAdvantage.value = '';
             newDrawback.value = '';
             newComment.value = '';
+
 
             commentPopup.classList.add("modal-visually-hidden");
             commentGreyoutOverlay.classList.add("modal-visually-hidden");
