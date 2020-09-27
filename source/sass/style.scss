@@ -1200,7 +1200,7 @@ span.required-asterisk:first-of-type {
     height: 50px;
 }
 
-.modal__form--stars {
+.modal__form-stars {
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 1;
@@ -1209,7 +1209,7 @@ span.required-asterisk:first-of-type {
 
 }
 
-.modal__form--stars p {
+.modal__form-stars p {
     display: inline-block;
     font-family: "Open Sans 600";
     font-style: normal;
@@ -1272,12 +1272,12 @@ form.modal__form::placeholder {
     color: #48494D;
 }
 
-div.modal__form--stars img {
+div.modal__form-stars img {
     margin-top: 5px;
     margin-right: 5px;
     cursor: pointer;
 }
 
-div.modal__form--stars img:last-of-type {
+div.modal__form-stars img:last-of-type {
     margin-right: 0;
 }

@@ -128,9 +128,9 @@
         let feedbackInWork = feedbackUnit.cloneNode(true);
         
         let feedbackName = feedbackInWork.querySelector('cite');
-        let feedbackAdvantages = feedbackInWork.querySelector('.feedback__plus-minus--advantages');
-        let feedbackDrawbacks = feedbackInWork.querySelector('.feedback__plus-minus--drawbacks');
-        let feedbackComment = feedbackInWork.querySelector('.feedback__plus-minus--comment');
+        let feedbackAdvantages = feedbackInWork.querySelector('.plus-minus-advantages');
+        let feedbackDrawbacks = feedbackInWork.querySelector('.plus-minus-drawbacks');
+        let feedbackComment = feedbackInWork.querySelector('.plus-minus-comment');
         let feedbackStarRating = feedbackInWork.querySelectorAll('.feedback__fivestar img');
         let feedbackStarRatingArry = Array.from(feedbackStarRating);
 
