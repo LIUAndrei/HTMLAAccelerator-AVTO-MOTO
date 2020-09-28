@@ -118,7 +118,7 @@
 
 /* adding a comment off of a popup to the comment section logic is below */
 
-        const commentForm = document.querySelector('.modal__form');
+        const commentForm = document.querySelector('#modal__form');
         const commentBox = document.querySelector('#modal__form--comment');
         const feedbackSection = document.querySelector('.tables__feedback');
         const feedbackButtonContainer = document.querySelector('.feedback__button-container');

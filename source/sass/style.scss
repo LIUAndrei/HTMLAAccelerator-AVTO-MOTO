@@ -516,6 +516,7 @@ ul.header__navlist {
 
 ul.header__navlist li {
     display: inline-block;
+    vertical-align: auto;
     margin-left: 68px;
 }
 
@@ -682,6 +683,7 @@ h2.description__name {
 
 .description__price span {
     display: inline-block;
+    vertical-align: auto;
 }
 
 .description__price-current {
@@ -767,6 +769,7 @@ div.table.tables--inactive {
 
 .tables__buttons button {
     display: inline-block;
+    vertical-align: auto;
     width: 195px;
     height: 50px;
     font-family: "Open Sans Regular";
@@ -1024,6 +1027,7 @@ button.tables__buttons-active {
     div.contacts__contacts-list a,
     div.contacts__contacts-list p {
         display: inline-block;
+        vertical-align: auto;
         margin-bottom: 34px;
         height: 12px;
     }
@@ -1103,6 +1107,7 @@ footer li:last-of-type {
 
 .modal__header {
     display: inline-block;
+    vertical-align: auto;
     font-family: "Open Sans 600";
     font-weight: 600;
     font-size: 25px;
@@ -1111,7 +1116,7 @@ footer li:last-of-type {
     margin-bottom: 24px;
 }
 
-.modal__form {
+#modal__form {
     position: relative;
     text-align: left;
     display: grid;
@@ -1122,7 +1127,7 @@ footer li:last-of-type {
     margin-top: 24px;
 }
 
-form.modal__form label {
+form#modal__form label {
     display: none;
     font-family: Open Sans;
     font-style: normal;
@@ -1134,12 +1139,12 @@ form.modal__form label {
 
 
 
-.modal__form input[type="text"] {
+#modal__form input[type="text"] {
     padding-left: 25px;
     padding-right: 15px;
 }
 
-.modal__form textarea {
+#modal__form textarea {
     padding: 15px 15px 15px 25px;
 }
 
@@ -1200,7 +1205,7 @@ span.required-asterisk:first-of-type {
     height: 50px;
 }
 
-.modal__form-stars {
+.modal__form--stars {
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 1;
@@ -1209,8 +1214,9 @@ span.required-asterisk:first-of-type {
 
 }
 
-.modal__form-stars p {
+.modal__form--stars p {
     display: inline-block;
+    vertical-align: auto;
     font-family: "Open Sans 600";
     font-style: normal;
     font-weight: 600;
@@ -1247,6 +1253,7 @@ span.required-asterisk:first-of-type {
     text-transform: uppercase;
     margin-top: 35px;
     display: inline-block;
+    vertical-align: auto;
     margin: 18px auto 0 auto;
 }
 
@@ -1263,7 +1270,7 @@ span.required-asterisk:first-of-type {
 }
 
 
-form.modal__form::placeholder {
+form#modal__form::placeholder {
     font-family: "Open Sans Regular";
     font-style: normal;
     font-weight: normal;
@@ -1272,12 +1279,12 @@ form.modal__form::placeholder {
     color: #48494D;
 }
 
-div.modal__form-stars img {
+div.modal__form--stars img {
     margin-top: 5px;
     margin-right: 5px;
     cursor: pointer;
 }
 
-div.modal__form-stars img:last-of-type {
+div.modal__form--stars img:last-of-type {
     margin-right: 0;
 }
