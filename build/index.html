@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>AVTO-MOTO</title>
+</head>
+<body>
+
+    <header class="header">
+        <div class="narrow-down-container header__flexbox"> <!-- класс narrow-down-container  служит только для того, чтобы отодвинуть содержимое от краев-->
+
+            <a href="#"><img class="header__logo" src="img/logo_extended.webp" alt="AVTO-MOTO"></a>
+            <nav class="header__navigation">
+                <ul class="header__navlist">
+                    <li><a href="#">Автомобили</a></li>
+                    <li><a href="#">Контакты</a></li>
+                    <li><a href="#">Услуги</a></li>
+                    <li><a href="#">Вакансии</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <main class="main">
+        <div class="narrow-down-container main__gridcontainer">
+
+            <!-- ниже размечен раздел с фотографией машины и слайдером для выбора одной из трех фотографий -->
+            <!-- для работоспособности слайдера все тумбинахи дождны иметь имя в виде thumbnail-№.webp, а полноразмерные фото - full-pic-№.webp -->
+            <div class="main__top-left picture-slider">
+                <div class="picture-slider__picture fullpic">
+                    <img class="fullpic__active" src="img/full-pic-1.webp" alt="Фото автомобиля" width="600" height="375">
+                </div>
+                <div class="picture-slider__slider slider">
+
+                    <button id="button-previous" class="slider__button slider__button-inactive">
+                        <span id="arrow-previous" class="slider__button-arrow-left slider__button-inactive"></span>
+                    </button>
+
+                    <a href="#"><img src="img/thumbnail-1.webp" alt="Экстерьер" width="128" height="80"></a>
+                    <a href="#"><img src="img/thumbnail-2.webp" alt="Интерьер" width="128" height="80"></a>
+                    <a href="#"><img src="img/thumbnail-3.webp" alt="Спидометр" width="128" height="80"></a>
+
+                    <button id="button-next" class="slider__button">
+                        <span id="arrow-next" class="slider__button-arrow-right"></span> 
+                    </button>
+                    
+                </div>
+            </div>
+
+            <!-- ниже размечен раздел с описанием автомобиля -->
+
+            <div class="main__top-right description"> 
+                <h2 class="description__name">Марпех 11</h2>
+                
+                    <ul class="description__features features">
+                        <li class="features__gasoline">бензин</li>
+                        <li class="features__gearbox">механика</li>
+                        <li class="features__horsepower">100 л.с.</li>
+                        <li class="features__displacement">1.4 л</li>
+                    </ul>
+                
+                <div class="description__price"><span class="description__price-current">2 300 000 ₽</span><span class="description__price-crossed-out">2 &nbsp;400 000 ₽</span></div>
+
+
+                <button id="purchase" class="description__button-purchase global-hover">оставить заявку</button>
+                <button id="loan" class="description__button-loan">В КРЕДИТ ОТ 11 000 ₽</button>
+            </div>
+
+            <!-- ниже размечен раздел с таблицами -->
+
+            <div class="main__bottom-right tables">
+
+                <div class="tables__buttons">
+                        <button class="tables__buttons-active global-hover">Характеристики</button>
+                        <button class="tables__buttons-inactive global-hover">Отзывы</button>
+                        <button class="tables__buttons-inactive global-hover">Контакты</button>
+                </div>
+
+                <!-- ниже размечена таблица с особеностями автомобиля -->
+                <div class="table tables__features features tables--active">
+                    <table class="features__table">
+                        <tr>
+                            <td>Трансмиссия</td>
+                            <td>Роботизированная</td>
+                        </tr>
+                        <tr>
+                            <td>Мощность двигателя, л.с.</td>
+                            <td>249</td>
+                        </tr>
+                        <tr>
+                            <td>Тип двигателя</td>
+                            <td>Бензиновый</td>
+                        </tr>
+                        <tr>
+                            <td>Привод</td>
+                            <td>Полный</td>
+                        </tr>
+                        <tr>
+                            <td>Объем двигателя, л</td>
+                            <td>2.4</td>
+                        </tr>
+                        <tr>
+                            <td>Макс. крутящий момент</td>
+                            <td>370/4500</td>
+                        </tr>
+                        <tr>
+                            <td>Количество цилиндров</td>
+                            <td>4</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- ниже размечен раздел отзывов -->
+                <div class="table tables__feedback feedback tables--inactive">
+                    <div class="feedback__button-container">
+                        <button id="feedback__button" class="feedback__button">оставить отзыв</button> 
+                    </div>
+                    <blockquote class="feedback__unit">
+                        <cite>Борис Иванов</cite>
+                        <dl class="feedback__plus-minus plus-minus">
+                            <dt>Достоинства</dt>
+                            <dd class="plus-minus-advantages">мощность, внешний вид</dd>
+                            <dt>Недостатки</dt>
+                            <dd class="plus-minus-drawbacks">Слабые тормозные колодки (пришлось заменить)</dd>
+                        </dl>
+                        <dl class="feedback__comment plus-minus">
+                            <dt>Комментарий</dt>
+                            <dd class="plus-minus-comment">Взяли по трейд-ин, на выгодных условиях у дилера. Стильная внешка и крут по базовым характеристикам. Не думал, что пересяду на китайский автопром, но сейчас гоняю и понимаю, что полностью доволен.</dd>
+                        </dl>
+                        <div class="feedback__fivestar fivestar">
+                            <img src="img/RedStar.svg" alt="Red Star" width="17" height="17">
+                            <img src="img/RedStar.svg" alt="Red Star" width="17" height="17">
+                            <img src="img/RedStar.svg" alt="Red Star" width="17" height="17">
+                            <img src="img/RedStar.svg" alt="Red Star" width="17" height="17">
+                            <img src="img/Star.svg" alt="Star" width="17" height="17">
+                            <span class="fivestar__recommend">Советует</span>
+                        </div>
+                        <div class="feedback__answer">
+                            <p class="time">1 минуту назад</p>
+                            <a href="#">Ответить</a>
+                        </div>
+                    </blockquote>
+                    <blockquote class="feedback__unit">
+                        <cite>Марсель Исмагилов</cite>
+                        <dl class="feedback__plus-minus">
+                            <dt>Достоинства</dt>
+                            <dd>Cтиль, комфорт, управляемость</dd>
+                            <dt>Недостатки</dt>
+                            <dd>Дорогой ремонт и обслуживание</dd>
+                        </dl>
+                        <dl class="feedback__comment">
+                            <dt>Комментарий</dt>
+                            <dd>Дизайн отличный, управление просто шикарно, ощущения за рулём такой машины особые. Но ремонт очень дорогой. Пару месяцев назад пришлось менять двигатель. По стоимости вышло как новый автомобиль. Так что, если покупать эту машину, надо быть готовым к большим расходам на обслуживание.</dd>
+                        </dl>
+                        <div class="feedback__fivestar fivestar">
+                            <img src="img/RedStar.svg" alt="Red Star" width="17" height="17">
+                            <img src="img/RedStar.svg" alt="Red Star" width="17" height="17">
+                            <img src="img/RedStar.svg" alt="Red Star" width="17" height="17">
+                            <img src="img/RedStar.svg" alt="Red Star" width="17" height="17">
+                            <img src="img/Star.svg" alt="Star" width="17" height="17">
+                            <span class="fivestar__recommend">Советует</span>
+                        </div>
+                        <div class="feedback__answer">
+                            <p class="time">1 минуту назад</p>
+                            <a href="#">Ответить</a>
+                        </div>
+                    </blockquote>
+                    
+                </div>
+
+                <!-- ниже размечен раздел контактов -->
+                <div class="table tables__contacts contacts tables--inactive">
+                    <div class="contacts__contacts-list contacts-list ">
+                        <h4 class="contacts-list__address-header">Адрес</h4>
+                        <address class="contacts-list__address">Санкт-Петербург,<br>
+                            набережная реки Карповки, дом 5</address>
+                        <h4>Режим работы</h4>
+                        <p>Ежедневно, с <time>10:00</time> до <time>21:00</time></p>
+                        <h4>Телефон</h4>
+                        <a href="tel:+88003335599">8 (800) 333-55-99</a>
+                        <h4>E-mail</h4>
+                        <a href="mailto:info@avto-moto.ru">info@avto-moto.ru</a>
+                    </div>
+                    
+                    <div class="contacts__map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1627.6186145760237!2d30.314278663083183!3d59.96826218937407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x402dad0dd1f6ebcd!2z0JPRgNCw0L3QtCDQn9C10YLRgNC-0LPRgNCw0LTRgdC60LjQuQ!5e1!3m2!1sen!2s!4v1600000672165!5m2!1sen!2s" width="431" height="271" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></div>
+
+                </div>
+            
+            </div>
+
+        </div>
+
+        <!-- ниже размечен попап для отзывов -->
+        <div class="greyout-overlay modal-visually-hidden"></div>
+        <div class="modal modal-visually-hidden">
+            <h3 class="modal__header">Оставить отзыв</h3>
+            <button class="modal__close-button">x</button>
+            <form id="modal__form" action="#">
+                <label for="modal__form--name">Пожалуйста, заполните поле</label>
+                <input id="modal__form--name" type="text" placeholder="Имя" required=""> <!-- <span class="required-asterisk">*</span> -->
+
+                <input id="modal__form--qualities" type="text" placeholder="Достоинства">
+                <input id="modal__form--drawbacks" type="text" placeholder="Недостатки">
+                <div class="modal__form--stars"><p>Оцените товар:</p>
+                    <img src="img/Star.svg" alt="Red Star" width="27" height="27">
+                    <img src="img/Star.svg" alt="Red Star" width="27" height="27">
+                    <img src="img/Star.svg" alt="Red Star" width="27" height="27">
+                    <img src="img/Star.svg" alt="Red Star" width="27" height="27">
+                    <img src="img/Star.svg" alt="Star" width="27" height="27">
+                </div>
+
+                <label for="modal__form--comment">Пожалуйста, заполните поле</label>
+                <textarea id="modal__form--comment" name="comments" cols="10" rows="3" placeholder="Комментарий" required=""></textarea>
+
+                <input id="modal__form--submit" class="global-hover" type="submit" value="оставить отзыв">
+            </form>
+
+
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="narrow-down-container clearfix">
+            <ul>
+                <li><a href="#">Корпоративным клиентам</a></li>
+                <li><a href="#">Клиентам</a></li>
+                <li><a href="#">Аренда авто</a></li>
+                <li><a href="#">Каршеринг</a></li>
+                <li><a href="#">Как продать авто</a></li>
+                <li><a href="#">Trade-in</a></li>
+                <li><a href="#">Test drive</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+
+    
+
+
+
+
+</body>
+</html>
