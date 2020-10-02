@@ -451,7 +451,8 @@
 
 
 body {
-    width: 1920px;
+    max-width: 1920px;
+    
 }
 
 ul {
@@ -480,6 +481,9 @@ a {
     background-color:#BD0C21;
 }
 
+.visually-hidden {
+    display: none;
+}
 
 
 
@@ -520,7 +524,17 @@ ul.header__navlist li {
     margin-left: 68px;
 }
 
+header a:hover,
+footer a:hover,
+div.contacts a:hover {
+    text-decoration: underline;
+}
 
+header a:focus,
+footer a:focus,
+div.contacts a:focus {
+    outline: 1px solid  #D12136;
+}
 
 
 /* <main> STYLES ARE BELOW */
@@ -752,7 +766,7 @@ h2.description__name {
 
 /* раздел с таблицами STYLES ARE BELOW */
 
-div.table.tables--inactive {
+div.table.table-inactive {
     display: none;
 }
 
@@ -1103,6 +1117,12 @@ footer li:last-of-type {
     text-align: center;
 }
 
+div.modal input,
+div.modal textarea {
+    border-radius: 0;
+    border-style: solid;
+    border-width: 1px;
+}
 
 
 .modal__header {
@@ -1116,7 +1136,7 @@ footer li:last-of-type {
     margin-bottom: 24px;
 }
 
-#modal__form {
+div.modal__form-container form {
     position: relative;
     text-align: left;
     display: grid;
@@ -1127,7 +1147,7 @@ footer li:last-of-type {
     margin-top: 24px;
 }
 
-form#modal__form label {
+div.modal__form-container label {
     display: none;
     font-family: Open Sans;
     font-style: normal;
@@ -1139,12 +1159,12 @@ form#modal__form label {
 
 
 
-#modal__form input[type="text"] {
+div.modal__form-container input[type="text"] {
     padding-left: 25px;
     padding-right: 15px;
 }
 
-#modal__form textarea {
+div.modal__form-container textarea {
     padding: 15px 15px 15px 25px;
 }
 
@@ -1205,7 +1225,7 @@ span.required-asterisk:first-of-type {
     height: 50px;
 }
 
-.modal__form--stars {
+#modal__form--stars {
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 1;
@@ -1214,7 +1234,7 @@ span.required-asterisk:first-of-type {
 
 }
 
-.modal__form--stars p {
+#modal__form--stars p {
     display: inline-block;
     vertical-align: auto;
     font-family: "Open Sans 600";
@@ -1263,10 +1283,10 @@ span.required-asterisk:first-of-type {
     right: 25px;
     width: 15px;
     height: 16px;
-    background: transparent;
     border: none;
     font-size: 0;
-    background: url("img/closebutton.svg") bottom no-repeat;
+    background: url("../img/closebutton.svg") center no-repeat;
+    
 }
 
 
@@ -1279,12 +1299,12 @@ form#modal__form::placeholder {
     color: #48494D;
 }
 
-div.modal__form--stars img {
+div#modal__form--stars img {
     margin-top: 5px;
     margin-right: 5px;
     cursor: pointer;
 }
 
-div.modal__form--stars img:last-of-type {
+div#modal__form--stars img:last-of-type {
     margin-right: 0;
 }

@@ -1,8 +1,8 @@
 /* Photo slider logic is below */
 
-        let photoGallery = document.querySelectorAll(".picture-slider__slider img");
+        let photoGallery = document.querySelectorAll('.picture-slider__slider img');
         let photoGalleryArry = Array.from(photoGallery);
-        let photoFull = document.querySelector(".fullpic__active");
+        let photoFull = document.querySelector('.fullpic__active');
         const buttonNext = document.querySelector('#button-next');
         const buttonPrevious = document.querySelector('#button-previous');
         const photoFullOnLoad = document.querySelector('img[src$="thumbnail-1.png"]'); 
@@ -55,7 +55,7 @@
 
 
         photoGalleryArry.forEach(function(thumbnail) {
-            thumbnail.addEventListener("click", function(evt) {
+            thumbnail.addEventListener('click', function(evt) {
                 evt.preventDefault();
                 photoFullSrcSwap(thumbnail);
                 photoCurrent = thumbnail;
@@ -71,45 +71,65 @@
 
 /* Modal popup open and close logic is below */
 
-        const activatePopupButton = document.querySelector("#feedback__button");    
-        const commentPopup = document.querySelector(".modal");
-        const commentGreyoutOverlay = document.querySelector(".greyout-overlay");
-        const closePopupButton = document.querySelector(".modal__close-button");
+        const activatePopupButton = document.querySelector('#feedback__button');    
+        const commentPopup = document.querySelector('.modal');
+        const commentGreyoutOverlay = document.querySelector('.greyout-overlay');
+        const closePopupButton = document.querySelector('.modal__close-button');
+        const nameInputField = document.querySelector('#modal__form--name');
+        const greyoutOverlay = document.querySelector('.greyout-overlay');
 
-        closePopupButton.addEventListener("click", function() {
-            commentPopup.classList.add("modal-visually-hidden");
-            commentGreyoutOverlay.classList.add("modal-visually-hidden");
+        closePopupButton.addEventListener('click', function() {
+            commentPopup.classList.add('modal-visually-hidden');
+            commentGreyoutOverlay.classList.add('modal-visually-hidden');
+            document.querySelector('body').style.overflow = 'visible';
         });
 
+        document.addEventListener('keydown', function(evt) {
+            if (evt.keyCode == 27) {
+                commentPopup.classList.add('modal-visually-hidden');
+                commentGreyoutOverlay.classList.add('modal-visually-hidden');
+                document.querySelector('body').style.overflow = 'visible';
+            }
+        });
 
-        activatePopupButton.addEventListener("click", function() {
-            commentPopup.classList.remove("modal-visually-hidden");
-            commentGreyoutOverlay.classList.remove("modal-visually-hidden");
+        greyoutOverlay.addEventListener('click', function() {
+            commentPopup.classList.add('modal-visually-hidden');
+            commentGreyoutOverlay.classList.add('modal-visually-hidden');
+            document.querySelector('body').style.overflow = 'visible';
+        })
+
+
+
+        activatePopupButton.addEventListener('click', function() {
+            commentPopup.classList.remove('modal-visually-hidden');
+            commentGreyoutOverlay.classList.remove('modal-visually-hidden');
+            nameInputField.setAttribute('autofocus', '');
+            document.querySelector('body').style.overflow = 'hidden';
         });
 
 /* switching tabs logic is below */
 
-        const tabButtons = document.querySelectorAll(".tables__buttons button");
+        const tabButtons = document.querySelectorAll('.tables__buttons button');
         const tabButtonsArry = Array.from(tabButtons);
-        const activeTabButton = document.querySelector(".tables__buttons-active");
-        const tables = document.querySelectorAll(".table");
+        const activeTabButton = document.querySelector('.tables__buttons-active');
+        const tables = document.querySelectorAll('.table');
         const tablesArry = Array.from(tables);
 
         tabButtonsArry.forEach(function(button) {
-        button.addEventListener("click", function(evt) {
+        button.addEventListener('click', function(evt) {
 
             const tabButtonsIndx = tabButtonsArry.indexOf(button);
 
             for (var k = 0; k <= tabButtonsArry.length - 1; k++ ) {
-                tabButtonsArry[k].classList.remove("tables__buttons-active");
-                tabButtonsArry[k].classList.add("tables__buttons-inactive");
-                tablesArry[k].classList.remove("tables--active");
-                tablesArry[k].classList.add("tables--inactive");
+                tabButtonsArry[k].classList.remove('tables__buttons-active');
+                tabButtonsArry[k].classList.add('tables__buttons-inactive');
+                tablesArry[k].classList.remove('table-active');
+                tablesArry[k].classList.add('table-inactive');
             }
-            tabButtonsArry[tabButtonsIndx].classList.remove("tables__buttons-inactive");
-            tabButtonsArry[tabButtonsIndx].classList.add("tables__buttons-active");
-            tablesArry[tabButtonsIndx].classList.remove("tables--inactive");
-            tablesArry[tabButtonsIndx].classList.add("tables--active");
+            tabButtonsArry[tabButtonsIndx].classList.remove('tables__buttons-inactive');
+            tabButtonsArry[tabButtonsIndx].classList.add('tables__buttons-active');
+            tablesArry[tabButtonsIndx].classList.remove('table-inactive');
+            tablesArry[tabButtonsIndx].classList.add('table-active');
 
         })
         });
@@ -150,7 +170,7 @@
         let starRating = 0;
 
         starsInPopupArry.forEach(function(star) {
-            star.addEventListener("click", function() {
+            star.addEventListener('click', function() {
                 for (var i = 0; i <= starsInPopupArry.indexOf(star); i++) {
                     starsInPopupArry[i].src = 'img/RedStar.svg';
                     feedbackStarRatingArry[i].src = 'img/RedStar.svg'
@@ -197,6 +217,7 @@
             newComment.value = '';
 
 
-            commentPopup.classList.add("modal-visually-hidden");
-            commentGreyoutOverlay.classList.add("modal-visually-hidden");
+            commentPopup.classList.add('modal-visually-hidden');
+            commentGreyoutOverlay.classList.add('modal-visually-hidden');
+            document.querySelector('body').style.overflow = 'visible';
         });

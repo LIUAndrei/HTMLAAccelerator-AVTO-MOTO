@@ -11,7 +11,7 @@
     <header class="header">
         <div class="narrow-down-container header__flexbox"> <!-- класс narrow-down-container  служит только для того, чтобы отодвинуть содержимое от краев-->
 
-            <a href="#"><img class="header__logo" src="img/logo_extended.webp" alt="AVTO-MOTO"></a>
+            <a><img class="header__logo" src="img/logo_extended.webp" alt="AVTO-MOTO"></a>
             <nav class="header__navigation">
                 <ul class="header__navlist">
                     <li><a href="#">Автомобили</a></li>
@@ -27,7 +27,7 @@
 
     <main class="main">
         <div class="narrow-down-container main__gridcontainer">
-
+            <h1 class="visually-hidden">Here goes a mighty Header text about this car with a misspelled name</h1>
             <!-- ниже размечен раздел с фотографией машины и слайдером для выбора одной из трех фотографий -->
             <!-- для работоспособности слайдера все тумбинахи дождны иметь имя в виде thumbnail-№.webp, а полноразмерные фото - full-pic-№.webp -->
             <div class="main__top-left picture-slider">
@@ -36,7 +36,7 @@
                 </div>
                 <div class="picture-slider__slider slider">
 
-                    <button id="button-previous" class="slider__button slider__button-inactive">
+                    <button name="Previous photo" id="button-previous" class="slider__button slider__button-inactive">
                         <span id="arrow-previous" class="slider__button-arrow-left slider__button-inactive"></span>
                     </button>
 
@@ -44,7 +44,7 @@
                     <a href="#"><img src="img/thumbnail-2.webp" alt="Интерьер"  width="128" height="80"></a>
                     <a href="#"><img src="img/thumbnail-3.webp" alt="Спидометр"  width="128" height="80"></a>
 
-                    <button id="button-next" class="slider__button">
+                    <button name="Next photo" id="button-next" class="slider__button">
                         <span id="arrow-next" class="slider__button-arrow-right"></span> 
                     </button>
                     
@@ -66,8 +66,8 @@
                 <div class="description__price"><span class="description__price-current">2 300 000 ₽</span><span class="description__price-crossed-out">2 &nbsp;400 000 ₽</span></div>
 
 
-                <button id="purchase" class="description__button-purchase global-hover">оставить заявку</button>
-                <button id="loan" class="description__button-loan">В КРЕДИТ ОТ 11 000 ₽</button>
+                <button name="Make a purchase" id="purchase" class="description__button-purchase global-hover">оставить заявку</button>
+                <button name="Apply for a loan" id="loan" class="description__button-loan">В КРЕДИТ ОТ 11 000 ₽</button>
             </div>
 
             <!-- ниже размечен раздел с таблицами -->
@@ -75,13 +75,13 @@
             <div class="main__bottom-right tables">
 
                 <div class="tables__buttons">
-                        <button class="tables__buttons-active global-hover">Характеристики</button>
-                        <button class="tables__buttons-inactive global-hover">Отзывы</button>
-                        <button class="tables__buttons-inactive global-hover">Контакты</button>
+                        <button name="Features of the vehicle" class="tables__buttons-active global-hover">Характеристики</button>
+                        <button name="Testimonials" class="tables__buttons-inactive global-hover">Отзывы</button>
+                        <button name="Contacts" class="tables__buttons-inactive global-hover">Контакты</button>
                 </div>
 
                 <!-- ниже размечена таблица с особеностями автомобиля -->
-                <div class="table tables__features features tables--active">
+                <div class="table tables__features features table-active">
                     <table class="features__table">
                         <tr>
                             <td>Трансмиссия</td>
@@ -115,9 +115,9 @@
                 </div>
 
                 <!-- ниже размечен раздел отзывов -->
-                <div class="table tables__feedback feedback tables--inactive">
+                <div class="table tables__feedback feedback table-inactive">
                     <div class="feedback__button-container">
-                        <button id="feedback__button" class="feedback__button">оставить отзыв</button> 
+                        <button name="Leave a feedback" id="feedback__button" class="feedback__button">оставить отзыв</button> 
                     </div>
                     <blockquote class="feedback__unit">
                         <cite>Борис Иванов</cite>
@@ -173,7 +173,7 @@
                 </div>
 
                 <!-- ниже размечен раздел контактов -->
-                <div class="table tables__contacts contacts tables--inactive">
+                <div class="table tables__contacts contacts table-inactive">
                     <div class="contacts__contacts-list contacts-list ">
                         <h4 class="contacts-list__address-header">Адрес</h4>
                         <address class="contacts-list__address">Санкт-Петербург,<br>
@@ -198,27 +198,28 @@
         <div class="greyout-overlay modal-visually-hidden"></div>
         <div class="modal modal-visually-hidden">
             <h3 class="modal__header">Оставить отзыв</h3>
-            <button class="modal__close-button">x</button>
-            <form id="modal__form" action="#">
-                <label for="modal__form--name">Пожалуйста, заполните поле</label>
-                <input id="modal__form--name" type="text" placeholder="Имя" required> <!-- <span class="required-asterisk">*</span> -->
+            <button name="Close the window" class="modal__close-button">x</button>
+            <div class="modal__form-container">
+                <form id="modal__form" action="#">
+                    <label for="modal__form--name">Пожалуйста, заполните поле</label>
+                    <input id="modal__form--name" type="text" placeholder="Имя" required> <!-- <span class="required-asterisk">*</span> -->
 
-                <input id="modal__form--qualities" type="text" placeholder="Достоинства">
-                <input id="modal__form--drawbacks" type="text" placeholder="Недостатки">
-                <div class="modal__form--stars"><p>Оцените товар:</p>
-                    <img src="img/Star.svg" alt="Red Star" width="27" height="27">
-                    <img src="img/Star.svg" alt="Red Star" width="27" height="27">
-                    <img src="img/Star.svg" alt="Red Star" width="27" height="27">
-                    <img src="img/Star.svg" alt="Red Star" width="27" height="27">
-                    <img src="img/Star.svg" alt="Star" width="27" height="27">
-                </div>
+                    <input id="modal__form--qualities" type="text" placeholder="Достоинства">
+                    <input id="modal__form--drawbacks" type="text" placeholder="Недостатки">
+                    <div id="modal__form--stars"><p>Оцените товар:</p>
+                        <img src="img/Star.svg" alt="Red Star" width="27" height="27">
+                        <img src="img/Star.svg" alt="Red Star" width="27" height="27">
+                        <img src="img/Star.svg" alt="Red Star" width="27" height="27">
+                        <img src="img/Star.svg" alt="Red Star" width="27" height="27">
+                        <img src="img/Star.svg" alt="Star" width="27" height="27">
+                    </div>
 
-                <label for="modal__form--comment">Пожалуйста, заполните поле</label>
-                <textarea id="modal__form--comment"  name="comments" cols="10" rows="3" placeholder="Комментарий" required></textarea>
+                    <label for="modal__form--comment">Пожалуйста, заполните поле</label>
+                    <textarea id="modal__form--comment"  name="comments" cols="10" rows="3" placeholder="Комментарий" required></textarea>
 
-                <input id="modal__form--submit" class="global-hover" type="submit" value="оставить отзыв">
-            </form>
-
+                    <input id="modal__form--submit" class="global-hover" type="submit" value="оставить отзыв">
+                </form>
+            </div>
 
 
         </div>
