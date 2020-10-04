@@ -451,7 +451,7 @@
 
 
 body {
-    max-width: 1920px;
+    width: 1920px;
     
 }
 
@@ -502,16 +502,12 @@ header a {
     font-weight: 600;
     font-size: 16px;
     line-height: 22px;
-    
-}
-
-.header__logo {
 }
 
 .header__flexbox {
     display: flex;
     justify-content: space-between;
-
+    padding-right: 6px;
 }
 
 ul.header__navlist {
@@ -521,7 +517,7 @@ ul.header__navlist {
 ul.header__navlist li {
     display: inline-block;
     vertical-align: auto;
-    margin-left: 68px;
+    margin-left: 66px;
 }
 
 header a:hover,
@@ -674,7 +670,7 @@ h2.description__name {
 
 
 .description__features li.features__gasoline {
-    background-position: -110px -10px;
+    background-position: -110px -9px;
 }
 
 .description__features li.features__gearbox {
@@ -814,7 +810,8 @@ button.tables__buttons-active {
     table.features__table {
         width: 565px;
         border-collapse: collapse;
-        margin-top: 10px;
+        margin-top: -10px;
+
     }
 
     table.features__table tr {
@@ -948,6 +945,8 @@ button.tables__buttons-active {
 
 
     div.feedback__answer p.time {
+        display: inline-block;
+        vertical-align: auto;
         font-family: "Open Sans Regular";
         font-style: normal;
         font-weight: normal;
@@ -958,6 +957,8 @@ button.tables__buttons-active {
     }
 
     div.feedback__answer a {
+        display: inline-block;
+        vertical-align: auto;
         font-family: "Open Sans Regular";
         font-style: normal;
         font-weight: normal;
@@ -1074,9 +1075,14 @@ footer a {
     font-family: "Open Sans 600";
 }
 
+footer ul {
+    padding-left: 8px;
+}
+
 footer li {
     float: left;
     margin-right: 66px;
+
 }
 
 footer li:last-of-type {
@@ -1122,7 +1128,9 @@ div.modal textarea {
     border-radius: 0;
     border-style: solid;
     border-width: 1px;
+    resize: vertical;
 }
+
 
 
 .modal__header {
@@ -1307,4 +1315,10 @@ div#modal__form--stars img {
 
 div#modal__form--stars img:last-of-type {
     margin-right: 0;
+}
+
+div.modal__form-container input:focus,
+div.modal__form-container textarea:focus {
+    border-color: lightblue;
+    box-shadow: lightblue;
 }

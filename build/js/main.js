@@ -103,7 +103,9 @@
         activatePopupButton.addEventListener('click', function() {
             commentPopup.classList.remove('modal-visually-hidden');
             commentGreyoutOverlay.classList.remove('modal-visually-hidden');
-            nameInputField.setAttribute('autofocus', '');
+            
+            nameInputField.autofocus = true;
+            console.log(nameInputField.autofocus);
             document.querySelector('body').style.overflow = 'hidden';
         });
 
