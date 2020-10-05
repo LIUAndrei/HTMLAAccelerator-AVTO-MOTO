@@ -104,7 +104,7 @@
             commentPopup.classList.remove('modal-visually-hidden');
             commentGreyoutOverlay.classList.remove('modal-visually-hidden');
             
-            nameInputField.autofocus = true;
+            nameInputField.focus();
             console.log(nameInputField.autofocus);
             document.querySelector('body').style.overflow = 'hidden';
         });
