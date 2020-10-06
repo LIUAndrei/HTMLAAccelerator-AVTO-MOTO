@@ -174,12 +174,12 @@
         starsInPopupArry.forEach(function(star) {
             star.addEventListener('click', function() {
                 for (var i = 0; i <= starsInPopupArry.indexOf(star); i++) {
-                    starsInPopupArry[i].src = 'img/RedStar.svg';
-                    feedbackStarRatingArry[i].src = 'img/RedStar.svg'
+                    starsInPopupArry[i].src = '../img/RedStar.svg';
+                    feedbackStarRatingArry[i].src = '../img/RedStar.svg';
                 }
                 for (var j = starsInPopupArry.indexOf(star) + 1; j < starsInPopupArry.length; j++) {
-                    starsInPopupArry[j].src = 'img/Star.svg';
-                    feedbackStarRatingArry[j].src = 'img/Star.svg'
+                    starsInPopupArry[j].src = '../img/Star.svg';
+                    feedbackStarRatingArry[j].src = '../img/Star.svg';
                 }
                 starRating = starsInPopupArry.indexOf(star);
             })
