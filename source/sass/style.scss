@@ -441,9 +441,8 @@
 @font-face {
     font-family: "Open Sans 600";
     src: local("Open Sans 600"),
-    url("../fonts/open-sans-v18-latin_cyrillic-ext_cyrillic-600.woff") format("woff"),
-    url("../fonts/open-sans-v18-latin_cyrillic-ext_cyrillic-600.woff2") format("woff2");
-
+    url("../fonts/open-sans-v18-latin_cyrillic-ext_cyrillic-600.woff2") format("woff2"),
+    url("../fonts/open-sans-v18-latin_cyrillic-ext_cyrillic-600.woff") format("woff");
     font-weight: 600;
     font-style: normal;
 }
