@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preload" href="fonts/open-sans-v18-latin_cyrillic-ext_cyrillic-regular.woff" as="font">
     <title>AVTO-MOTO</title>
+
 </head>
 <body>
 
@@ -32,7 +34,10 @@
             <!-- для работоспособности слайдера все тумбинахи дождны иметь имя в виде thumbnail-№.webp, а полноразмерные фото - full-pic-№.webp -->
             <div class="main__top-left picture-slider">
                 <div class="picture-slider__picture fullpic">
-                    <img class="fullpic__active" src="img/full-pic-1.webp" alt="Фото автомобиля" width="600" height="375">
+                    <picture>    
+                        <source>
+                        <img class="fullpic__active" src="img/full-pic-1.webp" srcset="" alt="Фото автомобиля" width="600" height="375">
+                    </picture>
                 </div>
                 <div class="picture-slider__slider slider">
 
@@ -40,9 +45,14 @@
                         <span id="arrow-previous" class="slider__button-arrow-left slider__button-inactive"></span>
                     </button>
 
-                    <a href="#"><img src="img/thumbnail-1.webp" alt="Экстерьер" width="128" height="80"></a>
-                    <a href="#"><img src="img/thumbnail-2.webp" alt="Интерьер" width="128" height="80"></a>
-                    <a href="#"><img src="img/thumbnail-3.webp" alt="Спидометр" width="128" height="80"></a>
+                    <a href="#">
+                        <picture>    
+                        <source srcset="img/thumbnail-1.webp">
+                            <img src="img/thumbnail-1.jpg" alt="Экстерьер" width="128" height="80">
+                        </picture>
+                    </a>
+                    <a href="#"><img src="img/thumbnail-2.webp" srcset="img/thumbnail-2.jpg" alt="Интерьер" width="128" height="80"></a>
+                    <a href="#"><img src="img/thumbnail-3.webp" srcset="img/thumbnail-3.jpg" alt="Спидометр" width="128" height="80"></a>
 
                     <button aria-label="Next photo" name="Next photo" id="button-next" class="slider__button">
                         <span id="arrow-next" class="slider__button-arrow-right"></span> 
