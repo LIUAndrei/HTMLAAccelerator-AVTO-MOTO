@@ -458,7 +458,6 @@
 
 body {
     width: 1920px;
-    
 }
 
 ul {
@@ -671,24 +670,24 @@ h2.description__name {
     width: 80px;
     text-align: center;
     padding-top: 60px;
-    background: url("../img/spriteset.webp") no-repeat center;
+    background: url("../img/spriteset.svg") no-repeat center;
 }
 
 
 .description__features li.features__gasoline {
-    background-position: -110px -9px;
+    background-position: -91px 20px;
 }
 
 .description__features li.features__gearbox {
-    background-position: -223px -10px;
+    background-position: 28px 20px;
 }
 
 .description__features li.features__horsepower {
-    background-position: -10px -10px;
+    background-position: -30px 20px;
 }
 
 .description__features li.features__displacement {
-    background-position: -323px -10px;
+    background-position: -144px 20px;
 }
 
 
